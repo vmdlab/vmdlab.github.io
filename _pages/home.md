@@ -1,5 +1,5 @@
 ---
-title: "Vo Minh Duc Laboratory"
+title: "Vo Minh Duc Homepage"
 layout: homelay
 excerpt: "Vo Minh Duc laboratory in the University of Tokyo. Our current research interests are computer vision and machine learning, including but not limited to image/video synthesis (GAN, Diffusion model), style transfer,  vision and language, image recognition, debiasing, transfer learning, domain adaptation, and deep learning."
 sitemap: false
@@ -57,13 +57,14 @@ permalink: /
   </a>
 </div>
 
+I am VO Minh Duc, a senior research scientist at SB Intuitions. If you are interested in building foundation models, especially multimodal generation and related topics, feel free to DM me!
 
-I am VO Minh Duc, a Project Assistant Professor at [Nakayama Lab](http://www.nlab.ci.i.u-tokyo.ac.jp/index-e.html), [Grad. School of Information Science and Technology, the University of Tokyo](https://www.i.u-tokyo.ac.jp/index_e.shtml). 
+Before 2025/4, I was a Project Assistant Professor at [Nakayama Lab](http://www.nlab.ci.i.u-tokyo.ac.jp/index-e.html), [Grad. School of Information Science and Technology, the University of Tokyo](https://www.i.u-tokyo.ac.jp/index_e.shtml). 
 
 I received B.Sc. and M.S. degrees in Computer Science at the University of Science, Vietnam National University Ho Chi Minh City. I received Ph.D. degree in Computer Science at [The Graduate University for Advanced Studies (SOKENDAI)](https://www.soken.ac.jp/en/)  (while at [National Institute of Informatics (NII)](https://www.nii.ac.jp/en/)), advised by [Prof. Akihiro Sugimoto](http://www.dgcv.nii.ac.jp).
 
-I am collaborating closely with members of our lab as well as external collaborators (see [Team](team)).
-Our current research interests are 
+I am collaborating closely with members of our team as well as external collaborators (see [Team](team)).
+My current research interests are 
 computer vision and machine learning, including but not limited to image/video synthesis (GAN, Diffusion model), style transfer,  vision and language, image recognition, debiasing, transfer learning, domain adaptation, and deep learning.
 
 We want to be able to build the perfect instruments to answer the scientific questions we deem most important (see our [Researchs](research), and [Publications](publications)). 
