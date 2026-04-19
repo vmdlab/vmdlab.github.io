@@ -1,0 +1,109 @@
+backend:
+  name: github
+  repo: vmdlab/vmdlab.github.io
+  branch: gh-pages
+  base_url: https://vmdlab-cms-oauth.netlify.app
+
+media_folder: "images/pubpic"
+public_folder: "/images/pubpic"
+
+collections:
+  - name: "news"
+    label: "News"
+    label_singular: "News Item"
+    file: "_data/news.yml"
+    fields:
+      - name: items
+        label: News Items
+        widget: list
+        fields:
+          - { label: "Date (HTML ok)", name: date, widget: string, hint: "e.g. <b>Apr 2026</b>" }
+          - { label: "Headline", name: headline, widget: text }
+
+  - name: "publications"
+    label: "Publications (Conference)"
+    label_singular: "Publication"
+    file: "_data/publist.yml"
+    fields:
+      - name: items
+        label: Publications
+        widget: list
+        fields:
+          - { label: "Title", name: title, widget: string }
+          - { label: "Authors (HTML ok)", name: authors, widget: string, hint: "Use <b>Name</b> for bold" }
+          - label: "Link"
+            name: link
+            widget: object
+            fields:
+              - { label: "URL", name: url, widget: string }
+              - { label: "Display", name: display, widget: string, hint: "e.g. CVPR 2026" }
+          - { label: "Image filename", name: image, widget: string, default: "coming_soon.jpg" }
+          - { label: "Description", name: description, widget: text, required: false }
+          - { label: "Highlight", name: highlight, widget: select, options: [{label: "Yes", value: 1}, {label: "No", value: 0}], default: 0 }
+          - { label: "Project / News link (Markdown ok)", name: news2, widget: string, required: false }
+
+  - name: "publications_domestic"
+    label: "Publications (Domestic)"
+    label_singular: "Publication"
+    file: "_data/dom_publist.yml"
+    fields:
+      - name: items
+        label: Publications
+        widget: list
+        fields:
+          - { label: "Title", name: title, widget: string }
+          - { label: "Authors (HTML ok)", name: authors, widget: string }
+          - label: "Link"
+            name: link
+            widget: object
+            fields:
+              - { label: "URL", name: url, widget: string }
+              - { label: "Display", name: display, widget: string }
+          - { label: "Image filename", name: image, widget: string, default: "coming_soon.jpg" }
+          - { label: "Highlight", name: highlight, widget: select, options: [{label: "Yes", value: 1}, {label: "No", value: 0}], default: 0 }
+
+  - name: "publications_journal"
+    label: "Publications (Journal)"
+    label_singular: "Publication"
+    file: "_data/jour_publist.yml"
+    fields:
+      - name: items
+        label: Publications
+        widget: list
+        fields:
+          - { label: "Title", name: title, widget: string }
+          - { label: "Authors (HTML ok)", name: authors, widget: string }
+          - label: "Link"
+            name: link
+            widget: object
+            fields:
+              - { label: "URL", name: url, widget: string }
+              - { label: "Display", name: display, widget: string }
+          - { label: "Image filename", name: image, widget: string, default: "coming_soon.jpg" }
+          - { label: "Description", name: description, widget: text, required: false }
+          - { label: "Highlight", name: highlight, widget: select, options: [{label: "Yes", value: 1}, {label: "No", value: 0}], default: 0 }
+          - { label: "Project / News link", name: news2, widget: string, required: false }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "_pages/home.md"
+        fields:
+          - { label: "Title", name: title, widget: string }
+          - { label: "Layout", name: layout, widget: hidden, default: homelay }
+          - { label: "Permalink", name: permalink, widget: hidden, default: "/" }
+          - { label: "Sitemap", name: sitemap, widget: hidden, default: false }
+          - { label: "Excerpt", name: excerpt, widget: text }
+          - { label: "Body", name: body, widget: markdown }
+      - name: "research"
+        label: "Research Page"
+        file: "_pages/research.md"
+        fields:
+          - { label: "Title", name: title, widget: string }
+          - { label: "Layout", name: layout, widget: hidden, default: textlay }
+          - { label: "Permalink", name: permalink, widget: hidden, default: "/research" }
+          - { label: "Sitemap", name: sitemap, widget: hidden, default: false }
+          - { label: "Excerpt", name: excerpt, widget: text }
+          - { label: "Body", name: body, widget: markdown }
