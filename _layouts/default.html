@@ -9,6 +9,17 @@
 
     {% include header.html %}
 
+    {% if page.layout == 'homelay' %}
+      {% include hero_home.html %}
+    {% elsif page.layout == 'gridlay' or page.layout == 'textlay' or page.layout == 'publications' or page.layout == 'research' %}
+      <div class="page-hero-wrap">
+        <div class="page-hero">
+          <span class="page-hero-label">VMD Lab</span>
+          <h1 class="page-hero-title">{{ page.title | remove: "VMD Lab - " }}</h1>
+        </div>
+      </div>
+    {% endif %}
+
     <div class="container-fluid">
       <div class="row">
         {{ content }}

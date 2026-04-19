@@ -6,7 +6,16 @@ sitemap: false
 permalink: /
 ---
 
-**Vision, Multimodality, and Deep learning**
+<div class="research-tags" markdown="0">
+  <span class="research-tag">🖼️ Image/Video Synthesis</span>
+  <span class="research-tag">🤖 Foundation Models</span>
+  <span class="research-tag">🌐 Vision &amp; Language</span>
+  <span class="research-tag">🎨 Style Transfer</span>
+  <span class="research-tag">🧠 Deep Learning</span>
+  <span class="research-tag">🔀 Domain Adaptation</span>
+  <span class="research-tag">⚖️ Debiasing</span>
+  <span class="research-tag">📽️ Diffusion Models</span>
+</div>
 
 
 <div markdown="0" id="carousel" class="carousel slide" data-ride="carousel" data-interval="4000" data-pause="hover" >
@@ -57,27 +66,64 @@ permalink: /
   </a>
 </div>
 
-I am VO Minh Duc, a senior research scientist at SB Intuitions. If you are interested in building foundation models, especially multimodal generation and related topics, feel free to DM me!
+<div class="bio-card" markdown="0">
+  <p class="bio-intro">I am <strong>Vo Minh Duc</strong>, a Senior Research Scientist at <strong>SB Intuitions</strong>, Japan, working on foundation models and multimodal generation. Feel free to reach out if you are interested in collaborating!</p>
+  <div class="bio-timeline">
+    <div class="bio-timeline-item">
+      <span class="bio-year">2025–</span>
+      <span>Senior Research Scientist · <strong>SB Intuitions</strong>, Japan</span>
+    </div>
+    <div class="bio-timeline-item">
+      <span class="bio-year">2022–2025</span>
+      <span>Project Assistant Professor · <a href="http://www.nlab.ci.i.u-tokyo.ac.jp/index-e.html">Nakayama Lab</a>, <strong>University of Tokyo</strong></span>
+    </div>
+    <div class="bio-timeline-item">
+      <span class="bio-year">Ph.D.</span>
+      <span>Computer Science · <a href="https://www.soken.ac.jp/en/">SOKENDAI</a> / <a href="https://www.nii.ac.jp/en/">NII</a> · Advisor: <a href="http://www.dgcv.nii.ac.jp">Prof. Akihiro Sugimoto</a></span>
+    </div>
+    <div class="bio-timeline-item">
+      <span class="bio-year">B.Sc. &amp; M.S.</span>
+      <span>Computer Science · University of Science, Vietnam National University HCMC</span>
+    </div>
+  </div>
+</div>
 
-Before 2025/4, I was a Project Assistant Professor at [Nakayama Lab](http://www.nlab.ci.i.u-tokyo.ac.jp/index-e.html), [Grad. School of Information Science and Technology, the University of Tokyo](https://www.i.u-tokyo.ac.jp/index_e.shtml). 
-
-I received B.Sc. and M.S. degrees in Computer Science at the University of Science, Vietnam National University Ho Chi Minh City. I received Ph.D. degree in Computer Science at [The Graduate University for Advanced Studies (SOKENDAI)](https://www.soken.ac.jp/en/)  (while at [National Institute of Informatics (NII)](https://www.nii.ac.jp/en/)), advised by [Prof. Akihiro Sugimoto](http://www.dgcv.nii.ac.jp).
-
-I am collaborating closely with members of our team as well as external collaborators (see [Team](team)).
-My current research interests are 
-computer vision and machine learning, including but not limited to image/video synthesis (GAN, Diffusion model), style transfer,  vision and language, image recognition, debiasing, transfer learning, domain adaptation, and deep learning.
-
-We want to be able to build the perfect instruments to answer the scientific questions we deem most important (see our [Researchs](research), and [Publications](publications)). 
-
-<!--
-**We are  looking for passionate new PhD students, Postdocs, and Master students to join the team** [(more info)]({{ site.url }}{{ site.baseurl }}/vacancies) **!**
--->
-
-
-
-<figure class="fourth">
-  <a href="https://www.u-tokyo.ac.jp/en/index.html"><img src="{{ site.url }}{{ site.baseurl }}/images/logopic/Utokyo.png" style="width: 70px"></a>
-  <a href="https://www.i.u-tokyo.ac.jp/index_e.shtml"><img src="{{ site.url }}{{ site.baseurl }}/images/logopic/UtokyoG.png" style="width: 70px"></a>
-<!--   <img src="{{ site.url }}{{ site.baseurl }}/images/logopic/kyotoU.png" style="width: 70px">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/logopic/kyotoUG.png" style="width: 70px"> -->
-</figure>
+<div class="community-section" markdown="0">
+  <h2 class="community-heading">🌐 Community Activities</h2>
+  <div class="community-grid">
+    <a href="https://lava-workshop.github.io" target="_blank" rel="noopener" class="community-card">
+      <div class="community-card-header lava-header">
+        <span class="community-card-icon">🏆</span>
+        <span class="community-card-tag">Grand Challenge · ACM MM 2026</span>
+      </div>
+      <div class="community-card-body">
+        <div class="community-card-title">LAVA Challenge</div>
+        <div class="community-card-subtitle">Large Vision–Language Model Learning &amp; Applications</div>
+        <p class="community-card-desc">Annual grand challenge on document understanding with Vision-Language Models. 2026 edition extends to multilingual PDFs and evidence-grounded answering.</p>
+        <div class="community-card-stats">
+          <span class="cstat">📄 Multilingual PDFs</span>
+          <span class="cstat">🌏 Int'l teams</span>
+          <span class="cstat">📚 ACM MM proceedings</span>
+        </div>
+      </div>
+      <div class="community-card-footer">Visit lava-workshop.github.io →</div>
+    </a>
+    <a href="https://vominhduc.github.io/vjai-paper-hub/" target="_blank" rel="noopener" class="community-card">
+      <div class="community-card-header vjai-header">
+        <span class="community-card-icon">📖</span>
+        <span class="community-card-tag">Bi-weekly · Vietnam &amp; Japan</span>
+      </div>
+      <div class="community-card-body">
+        <div class="community-card-title">VJAI Paper Reading Hub</div>
+        <div class="community-card-subtitle">From Paper to Prototype</div>
+        <p class="community-card-desc">A high-signal AI paper reading community for engineers and researchers in Vietnam &amp; Japan — deep-diving into papers that matter every two weeks.</p>
+        <div class="community-card-stats">
+          <span class="cstat">📝 9+ papers digested</span>
+          <span class="cstat">👥 24+ members</span>
+          <span class="cstat">🔁 Monthly cadence</span>
+        </div>
+      </div>
+      <div class="community-card-footer">Visit vominhduc.github.io/vjai-paper-hub →</div>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,94 @@
+---
+layout: default
+---
+<div id="publications" class="col-sm-12">
+
+<h1>Publications</h1>
+
+<h2>Highlights</h2>
+
+{% for publi in site.data.publist %}{% if publi.highlight == 1 %}
+<div class="pub-card">
+  <div class="pub-card-img-wrap">
+    <img src="{{ site.url }}{{ site.baseurl }}/images/pubpic/{{ publi.image }}" alt="{{ publi.title }}" class="pub-card-img" />
+  </div>
+  <div class="pub-card-body">
+    <div class="pub-card-title">{{ publi.title }}</div>
+    {% if publi.description %}<p class="pub-card-desc">{{ publi.description }}</p>{% endif %}
+    <p class="pub-card-authors">{{ publi.authors }}</p>
+    <div class="pub-card-footer">
+      <a href="{{ publi.link.url }}" class="pub-venue-badge" target="_blank">{{ publi.link.display }}</a>
+      {% if publi.news2 %}<span class="pub-news2">{{ publi.news2 | markdownify | remove: "<p>" | remove: "</p>" }}</span>{% endif %}
+    </div>
+  </div>
+</div>
+{% endif %}{% endfor %}
+
+{% for publi in site.data.jour_publist %}{% if publi.highlight == 1 %}
+<div class="pub-card">
+  <div class="pub-card-img-wrap">
+    <img src="{{ site.url }}{{ site.baseurl }}/images/pubpic/{{ publi.image }}" alt="{{ publi.title }}" class="pub-card-img" />
+  </div>
+  <div class="pub-card-body">
+    <div class="pub-card-title">{{ publi.title }}</div>
+    {% if publi.description %}<p class="pub-card-desc">{{ publi.description }}</p>{% endif %}
+    <p class="pub-card-authors">{{ publi.authors }}</p>
+    <div class="pub-card-footer">
+      <a href="{{ publi.link.url }}" class="pub-venue-badge pub-venue-journal" target="_blank">{{ publi.link.display }}</a>
+      {% if publi.news2 %}<span class="pub-news2">{{ publi.news2 | markdownify | remove: "<p>" | remove: "</p>" }}</span>{% endif %}
+    </div>
+  </div>
+</div>
+{% endif %}{% endfor %}
+
+<hr style="margin: 32px 0; border-color: #e2e8f0;" />
+
+<h2>Full List</h2>
+
+<h3>International Conference &amp; Workshop</h3>
+
+{% assign idx = 1 %}
+{% for publi in site.data.publist %}
+<div class="pub-list-item">
+  <span class="pub-list-num">{{ idx }}</span>
+  <div>
+    <span class="pub-list-title">{{ publi.title }}</span><br/>
+    <span class="pub-list-authors">{{ publi.authors }}</span><br/>
+    <a href="{{ publi.link.url }}" class="pub-list-venue" target="_blank">{{ publi.link.display }}</a>
+    {% if publi.news2 %} &nbsp;·&nbsp; <span class="pub-list-link">{{ publi.news2 | markdownify | remove: "<p>" | remove: "</p>" }}</span>{% endif %}
+  </div>
+</div>
+{% assign idx = idx | plus: 1 %}
+{% endfor %}
+
+<h3>Domestic Conference &amp; Workshop</h3>
+
+{% assign idx2 = 1 %}
+{% for publi in site.data.dom_publist %}
+<div class="pub-list-item">
+  <span class="pub-list-num">{{ idx2 }}</span>
+  <div>
+    <span class="pub-list-title">{{ publi.title }}</span><br/>
+    <span class="pub-list-authors">{{ publi.authors }}</span><br/>
+    <a href="{{ publi.link.url }}" class="pub-list-venue" target="_blank">{{ publi.link.display }}</a>
+  </div>
+</div>
+{% assign idx2 = idx2 | plus: 1 %}
+{% endfor %}
+
+<h3>Journal</h3>
+
+{% assign idx3 = 1 %}
+{% for publi in site.data.jour_publist %}
+<div class="pub-list-item">
+  <span class="pub-list-num">{{ idx3 }}</span>
+  <div>
+    <span class="pub-list-title">{{ publi.title }}</span><br/>
+    <span class="pub-list-authors">{{ publi.authors }}</span><br/>
+    <a href="{{ publi.link.url }}" class="pub-list-venue pub-list-venue-j" target="_blank">{{ publi.link.display }}</a>
+  </div>
+</div>
+{% assign idx3 = idx3 | plus: 1 %}
+{% endfor %}
+
+</div>
