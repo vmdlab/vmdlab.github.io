@@ -19,7 +19,7 @@ collections:
             label: News Items
             widget: list
             fields:
-              - { label: "Date (HTML ok)", name: date, widget: string, hint: "e.g. <b>Apr 2026</b>" }
+              - { label: "Date", name: date, widget: string, hint: "e.g. Apr 2026" }
               - { label: "Headline", name: headline, widget: text }
 
   - name: "publications"
