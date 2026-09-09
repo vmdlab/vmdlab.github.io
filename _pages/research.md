@@ -5,8 +5,9 @@ excerpt: "VMD Lab -- Research"
 sitemap: false
 permalink: /research
 ---
-
 ## Award
+Best demo award, MIRU 2026.
+
 委員特別賞. 言語処理学会第30回年次大会(NLP2024).
 
 Best paper award (community track), First Workshop on Test-Time Adaptation: Model, Adapt Thyself! (MAT), CVPR 2024.

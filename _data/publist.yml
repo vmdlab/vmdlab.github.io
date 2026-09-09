@@ -1,75 +1,84 @@
-- title: "NEMO: Can Multimodal LLMs Identify Attribute-Modified Objects?"
+- title: 'J-Shuwa: A Large-Scale Web-Collected Japanese Sign Language-Japanese Parallel Corpus'
+  image: ''
+  description: ''
+  authors: Junwen Mo, <B>Duc Minh Vo</B>, Noriki Nishida, Shin’ichi Satoh, Hideki Nakayama
+  link:
+    url: https://aclanthology.org/2026.findings-acl.1821/
+    display: ACL, Findings 2026
+  highlight: 0
+  news2: ''
+- title: Improving Sign Language Understanding with a Multi-Stream Masked Autoencoder Trained on ASL Videos
+  image: ''
+  description: ''
+  authors: Junwen Mo, <B>Duc Minh Vo</B>, Hideki Nakayama
+  link:
+    url: https://aclanthology.org/2025.ijcnlp-long.66/
+    display: AACL 2025
+  highlight: 0
+  news2: ''
+- title: 'NEMO: Can Multimodal LLMs Identify Attribute-Modified Objects?'
   image: 2024_NEMO.png
-  description:
+  description: ''
   authors: JiaXuan Li, Junwen Mo, <b>Duc Minh Vo</b>, Akihiro Sugimoto, Hideki Nakayama
   link:
     url: https://arxiv.org/abs/2411.17794
     display: Arxiv 2024
-  highlight: 1
+  highlight: 0
   news2: See [Project page](https://jiaxuan-li.github.io/NEMO/)
-
-- title: "R.I.P.: A Simple Black-box Attack on Continual Test-time Adaptation"
+- title: 'R.I.P.: A Simple Black-box Attack on Continual Test-time Adaptation'
   image: 2024_RIP.png
-  description:
+  description: ''
   authors: Trung-Hieu Hoang, <b>Duc Minh Vo</b>, Minh N.Do
   link:
     url: https://arxiv.org/abs/2412.01154
     display: Arxiv 2024
-  highlight: 1
+  highlight: 0
   news2: See [Project page](https://hthieu166.github.io/rip)
-
-
-- title: "Uncovering the Risk of Model Collapsing in Self-Supervised Continual Test-time Adaptation"
+- title: Uncovering the Risk of Model Collapsing in Self-Supervised Continual Test-time Adaptation
   image: coming_soon.jpg
-  description:
+  description: null
   authors: Trung-Hieu Hoang, <b>Duc Minh Vo</b>, Minh N.Do
   link:
     url: https://openreview.net/pdf?id=EFS2hfLuUF
     display: Workshop on Self-Supervised Learning - Theory and Practice, NeurIPS 2024
   highlight: 0
-
-- title: "Questioning, Answering, and Captioning for Zero-Shot Detailed Image Caption"
+- title: Questioning, Answering, and Captioning for Zero-Shot Detailed Image Caption
   image: coming_soon.jpg
-  description:
+  description: null
   authors: Duc-Tuan Luu, Viet-Tuan Le, <b>Duc Minh Vo</b>
   link:
     url: https://openaccess.thecvf.com/content/ACCV2024W/LAVA/papers/Luu_Questioning_Answering_and_Captioning_for_Zero-Shot_Detailed_Image_Caption_ACCVW_2024_paper.pdf
     display: Workshop on Large Vision - Language Model Learning and Applications, ACCV 2024
   highlight: 0
-
-
-- title: "Persistent Test-time Adaptation in Recurring Testing Scenarios"
+- title: Persistent Test-time Adaptation in Recurring Testing Scenarios
   image: 2024_TTA.png
-  description:
+  description: null
   authors: Trung-Hieu Hoang, <b>Duc Minh Vo</b>, Minh N.Do
   link:
     url: https://arxiv.org/abs/2311.18193
     display: The Thirty-eighth Annual Conference on Neural Information Processing Systems, NeurIPS 2024
   highlight: 1
   news2: See [Project page](https://hthieu166.github.io/petta)
-  
-- title: "A Compact Dynamic 3D Gaussian Representation for Real-Time Dynamic View Synthesis"
+- title: A Compact Dynamic 3D Gaussian Representation for Real-Time Dynamic View Synthesis
   image: 2024_compact_3DGS.png
-  description:  
+  description: null
   authors: Kai Katsumata, <b>Duc Minh Vo</b>, Hideki Nakayama
   link:
     url: https://arxiv.org/abs/2311.12897
     display: 2024 European Conference on Computer Vision
   highlight: 1
   news2: See [Project page](https://compactdynamic3dgaussian.github.io/)
-
-- title: "EVCap: Retrieval-Augmented Image Captioning with External Visual-Name Memory for Open-World Comprehension"
+- title: 'EVCap: Retrieval-Augmented Image Captioning with External Visual-Name Memory for Open-World Comprehension'
   image: 2023_EVCap.jpg
-  description:  
+  description: null
   authors: JiaXuan Li, <b>Duc Minh Vo</b>, Akihiro Sugimoto, Hideki Nakayama
   link:
     url: https://arxiv.org/abs/2311.15879
-    display: IEEE Computer Vision and Pattern Recognition (CVPR), 2024 
+    display: IEEE Computer Vision and Pattern Recognition (CVPR), 2024
   highlight: 1
   news2: Invited talk at MIRU, 2024
   news3: See [Project page](https://jiaxuan-li.github.io/EVCap/)
-  
-- title: "Persistent Test-time Adaptation in Episodic Testing Scenarios"
+- title: Persistent Test-time Adaptation in Episodic Testing Scenarios
   image: 2024_TTA.png
   description: Best paper award
   authors: Trung-Hieu Hoang, <b>Duc Minh Vo</b>, Minh N.Do
@@ -77,183 +86,163 @@
     url: https://arxiv.org/abs/2311.18193
     display: First Workshop on Test-Time Adaptation Model, Adapt Thyself (MAT), Community Track, CVPR 2024
   highlight: 0
-
-- title: "Improving the Robustness of 3D Human Pose Estimation: A Benchmark Dataset and Learning from Noisy Input"
+- title: 'Improving the Robustness of 3D Human Pose Estimation: A Benchmark Dataset and Learning from Noisy Input'
   image: coming_soon.jpg
-  description:  
+  description: null
   authors: Trung-Hieu Hoang, Mona Zehn, Huy Phan, <b>Duc Minh Vo</b>, Minh N. Do
   link:
     url: https://openaccess.thecvf.com/content/CVPR2024W/TCV2024/papers/Hoang_Improving_the_Robustness_of_3D_Human_Pose_Estimation_A_Benchmark_CVPRW_2024_paper.pdf
     display: IEEE CVPR workshop on fair, data-efficient, and trusted computer vision, 2024
-  highlight: 0    
-
-- title: "Balancing Reconstruction and Editing Quality of GAN Inversion for Real Image Editing with StyleGAN Prior Latent Space"
+  highlight: 0
+- title: Balancing Reconstruction and Editing Quality of GAN Inversion for Real Image Editing with StyleGAN Prior Latent Space
   image: coming_soon.jpg
-  description:  
+  description: null
   authors: Kai Katsumata, <b>Duc Minh Vo</b>, Bei Liu, Hideki Nakayama
   link:
     url: https://arxiv.org/abs/2307.08995
     display: IEEE Winter Conference on Applications of Computer Vision (WACV), 2024
   highlight: 0
   news2: See [Code](https://github.com/raven38/hypershpere-gan-inversion)
-
-- title: "Soft Curriculum for Learning Conditional GANs with Noisy-Labeled and Uncurated Unlabeled Data"
+- title: Soft Curriculum for Learning Conditional GANs with Noisy-Labeled and Uncurated Unlabeled Data
   image: coming_soon.jpg
-  description:  
+  description: null
   authors: Kai Katsumata, <b>Duc Minh Vo</b>, Tatsuya Harada, Hideki Nakayama
   link:
     url: https://arxiv.org/abs/2307.08319
     display: IEEE Winter Conference on Applications of Computer Vision (WACV), 2024
   highlight: 0
   news2: See [Code](https://github.com/raven38/NOSSGAN)
-
-- title: "Label Augmentation as Inter-class Data Augmentation for Conditional Image Synthesis with Imbalanced Data"
+- title: Label Augmentation as Inter-class Data Augmentation for Conditional Image Synthesis with Imbalanced Data
   image: coming_soon.jpg
-  description:  
+  description: null
   authors: Kai Katsumata, <b>Duc Minh Vo</b>, Hideki Nakayama
   link:
     url: https://arxiv.org
     display: IEEE Winter Conference on Applications of Computer Vision (WACV), 2024
   highlight: 0
   news2: See [Code](https://github.com/raven38/softlabel-gan)
-
-- title: "Partition-and-Debias: Agnostic Biases Mitigation via A Mixture of Biases-Specific Experts"
+- title: 'Partition-and-Debias: Agnostic Biases Mitigation via A Mixture of Biases-Specific Experts'
   image: 2023_PnD.png
-  description:  
+  description: null
   authors: Jiaxuan Li, <b>Duc Minh Vo</b>, Hideki Nakayama
   link:
     url: https://arxiv.org/abs/2308.10005
     display: International Conference on Computer Vision (ICCV), 2023
   highlight: 1
   news2: See [Code](https://github.com/Jiaxuan-Li/PnD)
-
-- title: "Revisiting Latent Space of GAN Inversion for Robust Real Image Editing"
+- title: Revisiting Latent Space of GAN Inversion for Robust Real Image Editing
   image: coming_soon.jpg
-  description:  
+  description: null
   authors: Kai Katsumata, <b>Duc Minh Vo</b>, Bei Liu, Hideki Nakayama
   link:
     url: https://arxiv.org/abs/2306.00241
     display: AI for Content Creation Workshop @CVPR, 2023
   highlight: 0
-
-- title: "A-CAP: Anticipation Captioning with Commonsense Knowledge"
+- title: 'A-CAP: Anticipation Captioning with Commonsense Knowledge'
   image: 2023_A_Cap.png
-  description:  
+  description: null
   authors: <b>Duc Minh Vo</b>, Quoc-An Luong, Akihiro Sugimoto, Hideki Nakayama
   link:
     url: https://openaccess.thecvf.com/content/CVPR2023/papers/Vo_A-Cap_Anticipation_Captioning_With_Commonsense_Knowledge_CVPR_2023_paper.pdf
-    display: IEEE Computer Vision and Pattern Recognition (CVPR), 2023 
+    display: IEEE Computer Vision and Pattern Recognition (CVPR), 2023
   highlight: 1
   news2: See [Video](https://www.youtube.com/watch?v=kJtIXqXsDHQ)
-  
-- title: "Indirect Adversarial Losses via an Intermediate Distribution for Training GANs"
+- title: Indirect Adversarial Losses via an Intermediate Distribution for Training GANs
   image: coming_soon.jpg
-  description:  
+  description: null
   authors: Rui Yang, <b>Duc Minh Vo</b>, Hideki Nakayama
   link:
     url: https://openaccess.thecvf.com/content/WACV2023/papers/Yang_Indirect_Adversarial_Losses_via_an_Intermediate_Distribution_for_Training_GANs_WACV_2023_paper.pdf
     display: IEEE Winter Conference on Applications of Computer Vision (WACV), 2023
   highlight: 0
-
-- title: "StoryER: Automatic Story Evaluation via Ranking, Rating and Reasoning "
+- title: 'StoryER: Automatic Story Evaluation via Ranking, Rating and Reasoning '
   image: 2022_StoryER.png
-  description:  
+  description: null
   authors: Hong Chen, <b>Duc Minh Vo</b>, Hiroya Takamura, Yusuke Miyao, Hideki Nakayama
   link:
     url: https://arxiv.org/abs/2210.08459
-    display: Conference on Empirical Methods in Natural Language Processing (EMNLP), 2022 
+    display: Conference on Empirical Methods in Natural Language Processing (EMNLP), 2022
   highlight: 1
   news2: Oral
-  
-- title: "NOC-REK: Novel Object Captioning with Retrieved Vocabulary from External Knowledge "
+- title: 'NOC-REK: Novel Object Captioning with Retrieved Vocabulary from External Knowledge '
   image: 2022_NOC_REK.png
-  description:  
+  description: null
   authors: <b>Duc Minh Vo</b>, Hong Chen, Akihiro Sugimoto, Hideki Nakayama
   link:
     url: https://openaccess.thecvf.com/content/CVPR2022/papers/Vo_NOC-REK_Novel_Object_Captioning_With_Retrieved_Vocabulary_From_External_Knowledge_CVPR_2022_paper.pdf
-    display: IEEE Computer Vision and Pattern Recognition (CVPR), 2022 
-  highlight: 1 
-  news2:
-
-- title: "OSSGAN: Open-Set Semi-Supervised Image Generation"
+    display: IEEE Computer Vision and Pattern Recognition (CVPR), 2022
+  highlight: 1
+  news2: null
+- title: 'OSSGAN: Open-Set Semi-Supervised Image Generation'
   image: 2022_OSSGAN.png
-  description: 
+  description: null
   authors: Kai Katsumata, <b>Duc Minh Vo</b>, Hideki Nakayama
   link:
     url: https://openaccess.thecvf.com/content/CVPR2022/papers/Katsumata_OSSGAN_Open-Set_Semi-Supervised_Image_Generation_CVPR_2022_paper.pdf
-    display:  IEEE Computer Vision and Pattern Recognition (CVPR), 2022 
+    display: IEEE Computer Vision and Pattern Recognition (CVPR), 2022
   highlight: 1
   news2: Invited talk at MIRU, 2022
   news3: See [code](https://github.com/raven38/OSSGAN)
-
-- title: "PPCD-GAN: Progressive Pruning and Class-Aware Distillation for Large-Scale Conditional GANs Compression"
+- title: 'PPCD-GAN: Progressive Pruning and Class-Aware Distillation for Large-Scale Conditional GANs Compression'
   image: 2022_PPCD_GAN.png
-  description:  
+  description: ''
   authors: <b>Duc Minh Vo</b>, Akihiro Sugimoto, Hideki Nakayama
   link:
     url: https://openaccess.thecvf.com/content/WACV2022/papers/Vo_PPCD-GAN_Progressive_Pruning_and_Class-Aware_Distillation_for_Large-Scale_Conditional_GANs_WACV_2022_paper.pdf
-    display:  IEEE Winter Conference on Applications of Computer Vision (WACV), 2022 
-  highlight: 1
+    display: IEEE Winter Conference on Applications of Computer Vision (WACV), 2022
+  highlight: 0
   news2: See [Poster](https://drive.google.com/file/d/1Cwewzf1JmcKf_H8ccc8C9vVPm7y_u_CO/view)
-
-- title: "Saliency based Subject Selection for Diverse Image Captioning  "
+- title: 'Saliency based Subject Selection for Diverse Image Captioning  '
   image: coming_soon.jpg
   authors: Quoc-An Luong, <b>Duc Minh Vo</b>, Akihiro Sugimoto
   link:
     url: http://www.mva-org.jp/Proceedings/2021/papers/O1-2-3.pdf
-    display: 17th International Conference on Machine Vision Applications, 2021 
+    display: 17th International Conference on Machine Vision Applications, 2021
   highlight: 0
-  news2:
-
-- title: "Visual-Relation Conscious Image Generation from Structured-Text "
+  news2: null
+- title: 'Visual-Relation Conscious Image Generation from Structured-Text '
   image: 2020_ECCV.png
-  description:  
+  description: null
   authors: <b>Duc Minh Vo</b>, Akihiro Sugimoto
   link:
     url: https://arxiv.org/pdf/1908.01741.pdf
-    display:  European Conference on Computer Vision (ECCV), 2020 
+    display: European Conference on Computer Vision (ECCV), 2020
   highlight: 1
-
-- title: "Stylized-Colorization for Line Arts"
+- title: Stylized-Colorization for Line Arts
   image: 2020_ICPR.png
   authors: Tzu-Ting Fang, <b>Duc Minh Vo</b>, Akihiro Sugimoto, Shang-Hong Lai
-  description:  
+  description: null
   link:
     url: http://www.dgcv.nii.ac.jp/Publications/Papers/2021/ICPR2020a.pdf
-    display: 25th International Conference on Pattern Recognition (ICPR), 2020 
+    display: 25th International Conference on Pattern Recognition (ICPR), 2020
   highlight: 0
-  news2:
-
-- title: "Paired-D GAN for Semantic Image Synthesis"
+  news2: null
+- title: Paired-D GAN for Semantic Image Synthesis
   image: 2018_ACCV_2022_MVAP.png
   authors: <b>Duc Minh Vo</b>, Akihiro Sugimoto
-  description:
+  description: null
   link:
     url: https://drive.google.com/open?id=1O99KIh9LwKkClo4WfsmzPxlFc1Gxxpsb
-    display:  Asian Conference on Computer Vision (ACCV), 2018 
+    display: Asian Conference on Computer Vision (ACCV), 2018
   highlight: 1
   news2: See [Poster](https://drive.google.com/open?id=1DdMTOVOwtY7n4bwbp4z6VSEhslybMsyE) and [Code](https://github.com/vominhduc/Paied-D-GAN)
   news3: Journal <a href="https://link.springer.com/epdf/10.1007/s00138-022-01298-7?sharing_token=oCJ5Sj3-X6TIX_cbR9B8_Pe4RwlQNchNByi7wbcMAY5yuJL1I7c-fxFCSr36k7jrXAc4MAZlm6DNyoJgakGW-Zbbf2Vm6-IEM89dkSFgYj7L_It0CE01ZnjYxMU-Wx4ZtwrHIQ0y3CBzYU-Ep2R3yOC4d_Q8WOhuFWab4rNSP04%3D"><b>Paired-D++ GAN for Image Manipulation with Text</b> </a>
   news4: <b>Duc Minh Vo</b>, Akihiro Sugimoto
-
-- title: "Balancing Content and Style with Two-Stream FCNs for Style Transfer"
+- title: Balancing Content and Style with Two-Stream FCNs for Style Transfer
   image: 2018_WACV.png
   authors: <b>Duc Minh Vo</b>, Trung-Nghia Le, Akihiro Sugimoto
-  description:  
+  description: null
   link:
     url: https://ieeexplore.ieee.org/document/8354256
-    display: IEEE Winter Conference on Applications of Computer Vision (WACV), 2018 
+    display: IEEE Winter Conference on Applications of Computer Vision (WACV), 2018
   highlight: 1
   news2: See [Poster](https://drive.google.com/open?id=1F9enpnA23Qn2MK6nQ6fwkpoEqyPan5ay), [Code](https://github.com/vominhduc/2Stream-Style-Transfer), [Demo](https://www.youtube.com/watch?v=sIF5uvDsLxE&t=1s)
-  
-- title: "Facial Expression Recognition by Re-ranking with Global and Local Generic Features "
+- title: 'Facial Expression Recognition by Re-ranking with Global and Local Generic Features '
   image: coming_soon.jpg
   authors: <b>Duc Minh Vo</b>, Akihiro Sugimoto, Thai Hoang Le
-  description:  
+  description: null
   link:
     url: https://ieeexplore.ieee.org/abstract/document/7900279
     display: 23rd International Conference on Pattern Recognition (ICPR), 2016
   highlight: 0
   news2: See [Poster](https://drive.google.com/open?id=1dAHOcDXdrRiT8iPFyEUhQg-30x9epwi3)
-
-
