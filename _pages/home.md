@@ -125,5 +125,22 @@ permalink: /
       </div>
       <div class="community-card-footer">Visit vominhduc.github.io/vjai-paper-hub →</div>
     </a>
+    <a href="https://www.vjaihackathon.com" target="_blank" rel="noopener" class="community-card">
+      <div class="community-card-header vjai-header">
+        <span class="community-card-icon">💻</span>
+        <span class="community-card-tag">Annual · Vietnam &amp; Japan</span>
+      </div>
+      <div class="community-card-body">
+        <div class="community-card-title">VJAI Hackathon</div>
+        <div class="community-card-subtitle">Building AI for Southeast Asia</div>
+        <p class="community-card-desc">An annual hackathon connecting developers and researchers from Vietnam and Japan to collaborate on AI solutions addressing real-world problems in Southeast Asia.</p>
+        <div class="community-card-stats">
+          <span class="cstat">🚀 Idea to Prototype</span>
+          <span class="cstat">🌏 Cross-border collaboration</span>
+          <span class="cstat">🏅 Mentorship & awards</span>
+        </div>
+      </div>
+      <div class="community-card-footer">Visit www.vjaihackathon.com →</div>
+    </a>
   </div>
 </div>
