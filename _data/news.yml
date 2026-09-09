@@ -1,33 +1,60 @@
+- date: Sep 2026
+  sortdate: 202609
+  headline: 1 paper accepted to AACL 2026
+- date: Aug 2026
+  sortdate: 202608
+  headline: Invited talk at Kyoto Sangyo University about Building Safe AI
+- date: Aug 2026
+  sortdate: 202608
+  headline: 1 paper accepted to EMNLP 2026
+- date: Aug 2026
+  sortdate: 202608
+  headline: I receive demo award at MIRU 2026 for Image safety pipeline
+- date: Jul 2026
+  sortdate: 202607
+  headline: "Organizing Vietnam - Japan AI Hackathon 2026 in Tokyo, Japan (Oct ~ Nov 2026).\r\n"
 - date: Jun 2026
+  sortdate: 202606
   headline: Hosting the monthly paper reading for VJAI.
 - date: Apr 2026
+  sortdate: 202604
   headline: Hosting LAVA Grand challenge at ACMMM 2026 in Rio de Janeiro, Brazil.
 - date: Mar 2026
+  sortdate: 202603
   headline: 1 paper accepted to ACL 2026 in California, US.
 - date: Dec 2025
+  sortdate: 202512
   headline: 1 paper accepted to AACL in Mumbai, India.
 - date: Nov 2025
+  sortdate: 202511
   headline: Organizing Vietnam - Japan AI Hackathon in Tokyo, Japan.
 - date: Oct 2025
+  sortdate: 202510
   headline: Hosting LAVA workshop and Grand challenge at ACMMM 2025 in Dublin, Ireland.
 - date: Aug 2025
+  sortdate: 202508
   headline: Attending MIRU 2024 in Kyoto, Japan.
 - date: Apr 2025
+  sortdate: 202504
   headline: Move to SB Intuitions.
 - date: Sep 2024
+  sortdate: 202409
   headline: |
     1 paper accepted to NeurIPS 2024.
 - date: August 2024
+  sortdate: 202408
   headline: |
     Attending ACL 2024 in Bangkok, Thailand.
 
     Attending MIRU 2024 in Kumamoto, Japan.
 - date: July 2024
+  sortdate: 202407
   headline: |
     1 paper accepted to ECCV 2024.
 
     We will organize a workshop "Large Vision – Language Model Learning and Applications" at ACCV 2024.
 - date: June 2024
+  sortdate: 202406
   headline: |
     Attending CVPR 2024 in Seattle, US.
 
@@ -35,11 +62,13 @@
 
     2 CVPR workshop paper, 1 main conference paper.
 - date: Mar 2024
+sortdate: 202403
   headline: |
     Award: 委員特別賞. 言語処理学会第30回年次大会(NLP2024).
 
     1 paper accepted to 2024 IEEE CVPR workshop on fair, data-efficient, and trusted computer vision.
 - date: Feb 2024
+sortdate: 202402
   headline: |
     1 paper accepted to CVPR 2024.
 
@@ -47,12 +76,16 @@
 
     The National Institute of Informatics (Japan) collaborative research fund FY 2024. 
 - date: Jan 2024
+sortdate: 202401
   headline: Attending WACV 2024 in Hawaii, US.
 - date: Dec 2023
+sortdate: 202312
   headline: Attending EMNLP 2023 in Singapore.
 - date: Nov 2023
+sortdate: 202311
   headline: 3 papers submitted to CVPR 2024.
 - date: Oct 2023
+sortdate: 202310
   headline: |
     A commentary paper accepted for publication in 日本画像学会誌 (Journal of the Imaging Society of Japan): Anticipation Captioning with Commonsense Knowledge.
 
@@ -63,18 +96,22 @@
 
     Attending ICCV 2023 in Paris, France.
 - date: Sep 2023
+sortdate: 202309
   headline: |
     3 papers submitted to WACV 2024.
 
     WACV 2024 reviewer.
 - date: Aug 2023
+sortdate: 202308
   headline: We have launched a new website. Thanks Dao Hoang Anh.
 - date: Jul 2023
+sortdate: 202307
   headline: |
     1 paper accepted at ICCV 2023: Partition-and-Debias: Agnostic Biases Mitigation via A Mixture of Biases-Specific Experts. 
 
     Attending MIRU 2023 in Hamamatsu, Japan.
 - date: Jun 2023
+sortdate: 202306
   headline: |
     I got funding from the National Institute of Informatics (Japan) for collaborative research from 2023/7–2024/3.
 
@@ -86,10 +123,13 @@
 
     Attending JSAI 2023 in Kumamoto, Japan.
 - date: May 2023
+sortdate: 202305
   headline: '1 paper accepted at AI4CC workshop (CVPR 2023): Balancing Reconstruction and Editing Quality of GAN Inversion for Real Image Editing with StyleGAN Prior Latent Space.'
 - date: Apr 2023
+sortdate: 202304
   headline: I have been promoted to Project Assistant Professor at Nakayama Lab, The University of Tokyo.
 - date: Mar 2023
+sortdate: 202303
   headline: |
     1 paper accepted at CVPR 2023: A-CAP: Anticipation Captioning with Commonsense Knowledge. 
 
@@ -97,17 +137,22 @@
 
     3 papers submitted to ICCV 2023.
 - date: 24. Dec 2022
+sortdate: 202212
   headline: Welcome Dao —  our lab is officially starting!
 - date: Dec 2022
+sortdate: 202212
   headline: Attending EMNLP 2022 (Abu Dhabi).
 - date: Nov 2022
+sortdate: 202211
   headline: 4 CVPR papers submitted.
 - date: Oct 2022
+sortdate: 202210
   headline: |
     1 paper accepted at WACV 2023: Indirect Adversarial Losses via an Intermediate Distribution for Training GANs.
 
     1 oral paper accepted at EMNLP 2022: StoryER: Automatic Story Evaluation via Ranking, Rating and Reasoning.
 - date: July-Sep 2022
+sortdate: 202207
   headline: |
     1 BMVC, 1 ACCV, 1 WACV, 1 EMNLP papers submitted.
 
@@ -115,11 +160,13 @@
 
     1 paper accepted to IEEE Access: Stochastically Flipping Labels of Discriminator’s Outputs for Training Generative Adversarial Networks".
 - date: Jun 2022
+sortdate: 202206
   headline: |
     Attending CVPR 2022 (New Orleans).
 
     Invited talk (AIST).
 - date: Mar 2022
+sortdate: 202203
   headline: |
     JSPS Grant-in-Aid for Early-Career Scientists  (KAKENHI).
 
@@ -133,6 +180,7 @@
 
     ECCV 2022 reviewer.
 - date: Jan 2022
+sortdate: 202201
   headline: |
     Attending WACV 2022 (Hawaii).
 
@@ -140,6 +188,7 @@
 
     ICPR 2022 reviewer.
 - date: Oct-Dec 2021
+sortdate: 202110
   headline: |
     1 paper accepted at WACV 2022, "PPCD-GAN: Progressive Pruning and Class-Aware Distillation for Large-Scale Conditional GANs Compression".
 
@@ -149,6 +198,7 @@
 
     CVPR 2022 reviewer.
 - date: Jul-Sep 2021
+sortdate: 202107
   headline: |
     1 BMVC paper submitted.
 
@@ -158,8 +208,10 @@
 
     BMVC 2021 external reviewer, NeurIPS 2021 emergency reviewer (Datasets and Benchmarks Track ), WACV 2022 reviewer.
 - date: Jun 2021
+sortdate: 202106
   headline: 1 paper accepted at MVA (oral), "Saliency-based Subject Selection for Diverse Image Captioning.
 - date: Mar 2021
+sortdate: 202103
   headline: |
     ICCV 2021 reviewer.
 
@@ -169,61 +221,83 @@
 
     1 ICMR paper submitted.
 - date: Dec 2020
+sortdate: 202012
   headline: CVPR 2021 reviewer
 - date: Nov 2020
+sortdate: 202011
   headline: |
     CVIU paper submitted.
 
     1 CVPR 2021 paper submitted.
 - date: Oct 2020
+sortdate: 202010
   headline: work as a postdoctoral researcher at Nakayama's lab, The University of Tokyo.
 - date: Sep 2020
+sortdate: 202009
   headline: graduated from SOKENDAI and NII.
 - date: Jul 2020
+sortdate: 202007
   headline: |
     Ph.D. thesis defense, "Learning-based Image Synthesis by Utilizing Disentangled Feature Representations".
 
     1 paper accepted at ECCV 2020, "Visual-Relation Conscious Image Generation from Structured-Text". 
 - date: Jun 2020
+sortdate: 202006
   headline: 1 paper accepted at ICPR 2020, "Stylized-Colorization for Line-Arts".
 - date: May 2020
+sortdate: 202005
   headline: 1 paper published in Machine Vision and Applications (Two-Stream FCNs to Balance Content and Style for Style Transfer).
 - date: Apr 2020
+sortdate: 202004
   headline: 1 ICPR 2020 paper submitted.
 - date: Mar 2020
+sortdate: 202003
   headline: |
     ECCV 2020 reviewer.
 
     1 ECCV 2020 paper submitted.
 - date: Nov 2019
+sortdate: 201911
   headline: |
     1 CVPR 2020 paper submitted.
 
     1 pre-print paper submitted (Two-Stream FCNs to Balance Content and Style for Style Transfer).
 - date: Aug 2019
+sortdate: 201908
   headline: 1 pre-print paper submitted (Visual-Relation Conscious Image Generation from Structured-Text).
 - date: Jul-Sep 2019
+sortdate: 201907
   headline: Internship at VLLab, UC Merced, research on video generation project.
 - date: Jul 2019
+sortdate: 201907
   headline: 1 MVA submitted.
 - date: Apr 2019
+sortdate: 201904
   headline: |
     Released code for our paper "Paired-D GAN for Semantic Image Synthesis" (ACCV 2018) [project page].
 
     Released code for our paper [[project page](https://github.com/vominhduc/2Stream-Style-Transfer), updating...].
 - date: Mar 2019
+sortdate: 201903
   headline: 1 ICCV 2019 paper submitted.
 - date: Nov 2018
+sortdate: 201811
   headline: 1 CVPR 2019 paper submitted.
 - date: Sep 2018
+sortdate: 201809
   headline: 1 paper accepted at ACCV 2018, "Paired-D GAN for Semantic Image Synthesis".
 - date: Dec 2017
+sortdate: 201712
   headline: 1 paper accepted at WACV 2018, "Balancing Content and Style with Two-Stream FCNs for Style Transfer".
 - date: Oct 2017
+sortdate: 201710
   headline: PhD student at SOKENDAI, Japan.
 - date: Apr-Sep 2017
+sortdate: 201704
   headline: Internship at NII, Japan, research on style transfer project.
 - date: Jul 2016
+sortdate: 201607
   headline: 1 paper accepted at ICPR 2016, "Facial Expression Recognition by Re-ranking with Global and Local Generic Features".
 - date: Aug 2015 - Jan 2016
+sortdate: 201501
   headline: Internship at NII, Japan, research on facial recognition project.

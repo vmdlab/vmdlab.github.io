@@ -4,7 +4,8 @@
     <h4>Latest News</h4>
   </div>
   <div class="news-list">
-    {% for article in site.data.news limit:6 %}
+    {% assign sorted_news = site.data.news | sort: "sortdate" | reverse %}
+    {% for article in sorted_news limit:6 %}
     <div class="news-item">
       <span class="news-date"><b>{{ article.date }}</b></span>
       <div class="news-headline">{{ article.headline | markdownify }}</div>
