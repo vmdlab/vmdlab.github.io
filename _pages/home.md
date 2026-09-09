@@ -15,6 +15,7 @@ permalink: /
   <span class="research-tag">🔀 Domain Adaptation</span>
   <span class="research-tag">⚖️ Debiasing</span>
   <span class="research-tag">📽️ Diffusion Models</span>
+  <span class="research-tag">🛡️ AI Safety</span>
 </div>
 
 
