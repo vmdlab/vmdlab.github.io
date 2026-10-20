@@ -151,6 +151,8 @@ code,pre{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace}
 .copy-btn{position:absolute;top:12px;right:12px;border:1px solid var(--line);background:#fff;border-radius:7px;padding:6px 12px;font-size:12px;font-weight:700;color:var(--ink-soft);cursor:pointer;font-family:'Manrope'}
 .copy-btn:hover{border-color:var(--ink-mute)}
 .copy-btn.done{color:var(--l0);border-color:var(--l0)}
+.btn--soon{opacity:.55;cursor:default}
+.btn--soon:hover{background:#fff;color:var(--ink);border-color:var(--ink)}
 
 /* footer */
 .site-footer{border-top:1px solid var(--line);padding:34px 0 44px;background:var(--tint)}
@@ -222,12 +224,12 @@ code,pre{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace}
     <p class="deck">Safety is not binary. Real adversaries escalate gradually — and every existing benchmark misses where the protection actually breaks. SafeGrad grades risk across four severity rungs and measures the gap everyone else averages away.</p>
     <div class="actions">
       <!-- TODO: link the camera-ready / arXiv PDF here once public -->
-      <!-- TODO: once the HuggingFace dataset repo is up, add a "Download dataset" button, e.g.
-           <a class="btn" href="https://huggingface.co/datasets/<org>/safegrad" target="_blank" rel="noreferrer">
-             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l3.6 6.3 7 1-5 4.9 1.2 7L12 18.9l-6.8 3.3 1.2-7-5-4.9 7-1z"/></svg>
-             Download dataset
-           </a>
-      -->
+      <!-- TODO: when the HuggingFace dataset repo is live, point href at the dataset URL
+           and drop the btn--soon class + "coming soon" label -->
+      <a class="btn btn--soon" href="#" aria-disabled="true" onclick="return false" title="HuggingFace dataset — coming soon">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l3.6 6.3 7 1-5 4.9 1.2 7L12 18.9l-6.8 3.3 1.2-7-5-4.9 7-1z"/></svg>
+        Dataset &middot; coming soon
+      </a>
       <a class="btn btn--solid" href="#cite">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v5h5"/></svg>
         Read paper
