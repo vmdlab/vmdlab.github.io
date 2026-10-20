@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SafeGrad: A Severity-Graded Benchmark for Safety Evaluation, Defense, and Attack of Text-to-Image Models</title>
+<meta name="description" content="SafeGrad grades text-to-image safety across four severity rungs. 1,026 adversarial ladders, 11 risk categories, 6 models, 9 defenses, 6 filters, 6 attacks — and a trainable fix for the L1–L2 safety gap."/>
+<meta name="author" content="Duc Minh Vo"/>
+<meta name="author" content="Jiaxuan Li"/>
+<meta name="author" content="Huy H. Nguyen"/>
+<meta name="author" content="Pride Kavumba"/>
+<meta name="author" content="Koki Wataoka"/>
+<meta property="og:title" content="SafeGrad: A Severity-Graded Benchmark for T2I Safety"/>
+<meta property="og:description" content="Safety is not binary. SafeGrad grades T2I risk across four severity rungs — and finds the gap where defenses fail."/>
+<meta property="og:image" content="/safegrad/assets/overview.png"/>
+<meta property="og:type" content="website"/>
+<link rel="icon" href="favicon.svg" sizes="any" type="image/svg+xml"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#22201d; --ink-soft:#4f4d48; --ink-mute:#6f6c65;
+  --paper:#ffffff; --tint:#f7f6f1; --line:#e6e4dd; --line-soft:#efede7;
+  --accent:#33507a; --accent-ink:#263c5e; --coral:#c16e75;
+  --l0:#2e7d4f; --l1:#b98811; --l2:#c25f24; --l3:#b33636;
+  --l0-bg:#e9f4ec; --l1-bg:#f9f1dd; --l2-bg:#faece1; --l3-bg:#f8e7e7;
+  --radius:10px; --maxw:820px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Manrope',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.serif{font-family:'Newsreader',Georgia,serif;font-weight:500;letter-spacing:-.01em}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+code,pre{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.site-header__inner{max-width:1180px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.site-brand{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:800;font-size:16px;letter-spacing:-.02em}
+.site-brand:hover{text-decoration:none}
+.site-brand svg{flex:none}
+.site-nav{display:flex;gap:4px;flex-wrap:wrap}
+.site-nav a{padding:7px 13px;border-radius:999px;font-size:13.5px;font-weight:600;color:var(--ink-soft)}
+.site-nav a:hover{background:var(--tint);text-decoration:none;color:var(--ink)}
+
+/* layout */
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.band{padding:72px 0}
+.band--tint{background:var(--tint);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.prose{max-width:var(--maxw);margin:0 auto}
+.prose p{margin:0 0 1.1em}
+.kicker{font-family:'Manrope';font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 12px}
+.prose h2{font-size:clamp(26px,3.4vw,34px);line-height:1.16;margin:0 0 18px}
+.prose .lede{font-size:19px;color:var(--ink-soft)}
+.side-note{font-size:14.5px;color:var(--ink-mute)}
+
+/* hero */
+.hero{padding:84px 0 64px;position:relative;overflow:hidden}
+.hero .atmo{position:absolute;inset:0;background:
+  radial-gradient(42rem 20rem at 85% -10%,rgba(51,80,122,.08),transparent 65%),
+  radial-gradient(38rem 18rem at 8% 0%,rgba(193,110,117,.07),transparent 60%);pointer-events:none}
+.hero .wrap{position:relative}
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 16px}
+.hero h1{font-size:clamp(32px,4.6vw,50px);line-height:1.08;margin:0 0 18px;max-width:20ch}
+.hero .deck{font-size:clamp(17px,2vw,20px);color:var(--ink-soft);max-width:62ch;margin:0 0 26px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 26px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;border:1.5px solid var(--ink);font-weight:700;font-size:14.5px;color:var(--ink);background:#fff;transition:all .15s}
+.btn:hover{background:var(--ink);color:#fff;text-decoration:none}
+.btn--solid{background:var(--ink);color:#fff}
+.btn--solid:hover{background:var(--accent-ink)}
+.btn svg{flex:none}
+.byline{font-size:15px;color:var(--ink-soft);margin:0 0 6px}
+.byline b{color:var(--ink);font-weight:700}
+.affil{font-size:14px;color:var(--ink-mute);margin:0}
+.hero-figure{margin:44px 0 0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff}
+.hero-figure img{width:100%}
+.figcap{padding:12px 16px;font-size:13.5px;color:var(--ink-mute);border-top:1px solid var(--line);line-height:1.5}
+
+/* metric strip */
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin:34px 0 0}
+.metrics>div{background:#fff;padding:18px 16px;text-align:center}
+.metrics b{display:block;font-family:'Newsreader';font-size:30px;font-weight:600;line-height:1.1}
+.metrics span{font-size:12.5px;font-weight:600;color:var(--ink-mute);letter-spacing:.02em}
+
+/* verdict visual */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:30px 0 6px}
+.verdict-card{border:1px solid var(--line);border-radius:var(--radius);padding:20px;background:#fff}
+.verdict-card h3{margin:0 0 8px;font-size:19px}
+.verdict-card .tag{font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px}
+.verdict-card p{margin:0;font-size:14.5px;color:var(--ink-soft)}
+.verdict-stamp{display:inline-block;margin:8px 0 12px;padding:6px 14px;border-radius:6px;font-weight:800;font-size:14px;letter-spacing:.06em}
+.stamp--binary{background:var(--tint);border:1.5px solid var(--ink);color:var(--ink)}
+.ladder-mini{display:flex;gap:6px;margin:10px 0 12px}
+.ladder-mini i{flex:1;height:34px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:11.5px;font-weight:800;color:#fff}
+
+/* rung cards */
+.rungs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:30px 0 4px}
+.rung{border-radius:var(--radius);padding:18px;border:1px solid var(--line);background:#fff;position:relative;overflow:hidden}
+.rung::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--rc)}
+.rung .lvl{font-size:12px;font-weight:800;letter-spacing:.1em;color:var(--rc);margin:0 0 6px}
+.rung h3{margin:0 0 8px;font-size:18px}
+.rung p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+
+/* pipeline */
+.stages{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:30px 0 8px;counter-reset:stage}
+.stage{border:1px solid var(--line);border-radius:var(--radius);padding:18px;background:#fff;position:relative}
+.stage .num{font-family:'Newsreader';font-size:26px;font-weight:600;color:var(--accent);opacity:.45;display:block;margin-bottom:4px}
+.stage h3{font-size:16.5px;margin:0 0 8px}
+.stage p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+
+/* insights */
+.insight-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:30px 0 10px}
+.insight{border:1px solid var(--line);border-radius:var(--radius);padding:20px 20px 18px;background:#fff;display:flex;flex-direction:column;gap:6px}
+.insight .no{font-size:11.5px;font-weight:800;letter-spacing:.12em;color:var(--ink-mute)}
+.insight .stat{font-family:'Newsreader';font-size:21px;font-weight:600;color:var(--ink);line-height:1.25}
+.insight .stat em{font-style:normal;color:var(--rc,var(--accent))}
+.insight p{margin:0;font-size:14px;color:var(--ink-soft);line-height:1.55}
+
+/* figure frames */
+.frame{margin:34px 0 0;border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:18px;display:flex;justify-content:center}
+.frame img{max-height:420px;width:auto;max-width:100%}
+
+/* gap numbers */
+.gap-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px 0 6px}
+.gap-cell{border-radius:var(--radius);padding:18px;text-align:center}
+.gap-cell b{display:block;font-family:'Newsreader';font-size:31px;font-weight:600;line-height:1.15}
+.gap-cell span{font-size:13px;font-weight:600;color:var(--ink-soft)}
+.gap-cell--l0{background:var(--l0-bg)}
+.gap-cell--l0 b{color:var(--l0)}
+.gap-cell--jump{background:var(--l2-bg)}
+.gap-cell--jump b{color:var(--l2)}
+.gap-cell--l3{background:var(--l3-bg)}
+.gap-cell--l3 b{color:var(--l3)}
+
+/* cite */
+.cite-box{position:relative;margin:26px 0 0}
+.cite-box pre{margin:0;background:var(--tint);border:1px solid var(--line);border-radius:var(--radius);padding:18px 58px 18px 18px;font-size:13px;line-height:1.6;overflow-x:auto;white-space:pre}
+.copy-btn{position:absolute;top:12px;right:12px;border:1px solid var(--line);background:#fff;border-radius:7px;padding:6px 12px;font-size:12px;font-weight:700;color:var(--ink-soft);cursor:pointer;font-family:'Manrope'}
+.copy-btn:hover{border-color:var(--ink-mute)}
+.copy-btn.done{color:var(--l0);border-color:var(--l0)}
+
+/* footer */
+.site-footer{border-top:1px solid var(--line);padding:34px 0 44px;background:var(--tint)}
+.site-footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center}
+.site-footer p{margin:0;font-size:13.5px;color:var(--ink-mute)}
+.site-footer a{font-weight:600}
+
+/* scroll index */
+.scroll-index{position:fixed;left:18px;top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;gap:9px;max-width:170px}
+.scroll-index a{display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:600;color:var(--ink-mute)}
+.scroll-index a:hover{text-decoration:none;color:var(--ink)}
+.scroll-index .bar{width:14px;height:2px;border-radius:2px;background:var(--line);flex:none;transition:all .2s}
+.scroll-index a.active{color:var(--accent)}
+.scroll-index a.active .bar{width:26px;background:var(--accent)}
+@media (max-width:1320px){.scroll-index{display:none}}
+@media (max-width:900px){
+  .duo,.insight-grid{grid-template-columns:1fr}
+  .rungs,.stages{grid-template-columns:1fr 1fr}
+  .gap-strip{grid-template-columns:1fr}
+  .band{padding:54px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-brand" href="#overview" aria-label="SafeGrad home">
+      <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="30" height="30" rx="6" stroke="#22201d" stroke-width="1.6"/>
+        <path d="M11 5v22M21 5v22M11 11h10M11 16.5h10M11 22h10" stroke="#22201d" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="11" cy="11" r="2.6" fill="#2e7d4f"/>
+        <circle cx="11" cy="16.5" r="2.6" fill="#b98811"/>
+        <circle cx="11" cy="22" r="2.6" fill="#c25f24"/>
+        <circle cx="21" cy="16.5" r="2.6" fill="#b33636"/>
+      </svg>
+      <span>SafeGrad</span>
+    </a>
+    <nav class="site-nav" aria-label="Sections">
+      <a href="#question">Why</a>
+      <a href="#ladder">The ladder</a>
+      <a href="#gap">Safety gap</a>
+      <a href="#pipeline">Pipeline</a>
+      <a href="#insights">Insights</a>
+      <a href="#cite">Cite</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="scroll-index" aria-label="On this page">
+  <a href="#overview" class="active"><span class="bar"></span><span>Overview</span></a>
+  <a href="#question"><span class="bar"></span><span>The question</span></a>
+  <a href="#ladder"><span class="bar"></span><span>Severity ladder</span></a>
+  <a href="#gap"><span class="bar"></span><span>The safety gap</span></a>
+  <a href="#pipeline"><span class="bar"></span><span>ASL pipeline</span></a>
+  <a href="#insights"><span class="bar"></span><span>Insights</span></a>
+  <a href="#cite"><span class="bar"></span><span>Cite</span></a>
+</nav>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="overview">
+  <div class="atmo" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow">WACV 2027 &middot; Datasets Track</p>
+    <h1>SafeGrad: A Severity-Graded Benchmark for Safety Evaluation, Defense, and Attack of Text-to-Image Models</h1>
+    <p class="deck">Safety is not binary. Real adversaries escalate gradually — and every existing benchmark misses where the protection actually breaks. SafeGrad grades risk across four severity rungs and measures the gap everyone else averages away.</p>
+    <div class="actions">
+      <!-- TODO: link the camera-ready / arXiv PDF here once public -->
+      <a class="btn btn--solid" href="#cite">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v5h5"/></svg>
+        Read paper
+      </a>
+      <a class="btn" href="https://github.com/vominhduc/SafeGrad_paper" target="_blank" rel="noreferrer">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg>
+        View code on GitHub
+      </a>
+      <a class="btn" href="#cite">
+        <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 6.2C6.8 7.5 5 10.1 5 13.5V18h6.2v-6.8H8c.4-1.4 1.4-2.4 3.2-3.1l-.7-1.9Zm8 0c-3.7 1.3-5.5 3.9-5.5 7.3V18h6.2v-6.8H16c.4-1.4 1.4-2.4 3.2-3.1l-.7-1.9Z" fill="currentColor"/></svg>
+        Cite
+      </a>
+    </div>
+    <p class="byline"><b>Duc Minh Vo</b> &middot; <b>Jiaxuan Li</b> &middot; <b>Huy H. Nguyen</b> &middot; <b>Pride Kavumba</b> &middot; <b>Koki Wataoka</b></p>
+    <p class="affil">SB Intuitions Corp., Tokyo, Japan</p>
+
+    <figure class="hero-figure">
+      <img src="assets/overview.png" alt="SafeGrad overview: escalation rules, 11-category taxonomy in three risk families, four-level severity ladder, and headline results." loading="eager"/>
+      <figcaption class="figcap">SafeGrad overview. (Left) Escalation rules, illustrated with a Copyright Infringement example. (Middle) The 11-category risk taxonomy organized into three families (NSFW, Legal, Social). (Right) The four-level escalation structure: prompt, reference image, and risk explanation co-escalate from Safe (L0) through Low- (L1) and Mid-risk (L2) to High-risk (L3).</figcaption>
+    </figure>
+
+    <div class="metrics" aria-label="Benchmark scale">
+      <div><b>1,026</b><span>adversarial ladders</span></div>
+      <div><b>4,104</b><span>prompt–image–explanation triplets</span></div>
+      <div><b>11</b><span>risk categories</span></div>
+      <div><b>4</b><span>severity rungs</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUESTION -->
+<section class="band band--tint" id="question">
+  <div class="wrap">
+    <div class="prose">
+      <p class="kicker">The question</p>
+      <h2>How safe is &ldquo;safe&rdquo;?</h2>
+      <p class="lede">Real adversaries do not ask &ldquo;is this safe&rdquo; — they escalate gradually, probing defenses one shade of risk at a time. Binary safe/unsafe benchmarks cannot locate <em>where</em> on the severity spectrum a model's protection fails.</p>
+      <p>Defenses and filters are trained on binary labels and calibrated at the explicit extreme. There is little reason to expect their protection to track the severity spectrum — and no existing benchmark could verify whether it does.</p>
+    </div>
+    <div class="duo">
+      <div class="verdict-card">
+        <p class="tag">Binary evaluation</p>
+        <h3>One bit per sample</h3>
+        <div class="verdict-stamp stamp--binary">SAFE / UNSAFE</div>
+        <p>Averaged over a flat prompt set, the boundary region — where harm has begun but explicitness has not — is invisible. Every rung contributes equally to one aggregate number.</p>
+      </div>
+      <div class="verdict-card">
+        <p class="tag" style="color:var(--accent)">Severity-graded evaluation</p>
+        <h3>One ladder per scenario</h3>
+        <div class="ladder-mini" aria-label="L0 through L3">
+          <i style="background:var(--l0)">L0</i><i style="background:var(--l1)">L1</i><i style="background:var(--l2)">L2</i><i style="background:var(--l3)">L3</i>
+        </div>
+        <p>SafeGrad holds the scenario fixed and escalates severity step by step. How a defense behaves <em>across</em> the rungs — not at either end — is the measurement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LADDER -->
+<section class="band" id="ladder">
+  <div class="wrap">
+    <div class="prose">
+      <p class="kicker">The severity ladder</p>
+      <h2>Four rungs, one scenario.</h2>
+      <p class="lede">Each ladder co-escalates a single scenario through four calibrated severity levels under matched generation conditions — same model, same seed — with prompts, reference images, and per-rung risk explanations.</p>
+    </div>
+    <div class="rungs">
+      <div class="rung" style="--rc:var(--l0)">
+        <p class="lvl">L0</p><h3>Safe</h3>
+        <p>Policy-compliant and benign; passes every reasonable guardrail.</p>
+      </div>
+      <div class="rung" style="--rc:var(--l1)">
+        <p class="lvl">L1</p><h3>Low-risk</h3>
+        <p>Borderline content: prompt reads benign, harm is beginning to surface.</p>
+      </div>
+      <div class="rung" style="--rc:var(--l2)">
+        <p class="lvl">L2</p><h3>Mid-risk</h3>
+        <p>Visibly harmful while still evading classifiers trained on explicit content.</p>
+      </div>
+      <div class="rung" style="--rc:var(--l3)">
+        <p class="lvl">L3</p><h3>High-risk</h3>
+        <p>Explicit, unambiguous harm — where binary benchmarks concentrate.</p>
+      </div>
+    </div>
+    <p class="side-note" style="max-width:var(--maxw);margin:18px auto 0">The 11 risk categories span three families — NSFW, Legal, and Social — synthesized from the usage policies of leading T2I platforms, with human-authored escalation rules per category.</p>
+  </div>
+</section>
+
+<!-- GAP -->
+<section class="band band--tint" id="gap">
+  <div class="wrap">
+    <div class="prose">
+      <p class="kicker">The safety gap</p>
+      <h2>Where protection actually breaks.</h2>
+      <p class="lede">Across six open-source T2I models, pooled harmful generation climbs with severity — and the steepest jump is exactly where binary calibration is blind: the L1&rarr;L2 boundary.</p>
+    </div>
+    <div class="gap-strip">
+      <div class="gap-cell gap-cell--l0"><b>1.7%</b><span>pooled HGR at the safe rung (L0)</span></div>
+      <div class="gap-cell gap-cell--jump"><b>+28.0 pp</b><span>steepest jump, at L1&rarr;L2</span></div>
+      <div class="gap-cell gap-cell--l3"><b>65.8%</b><span>pooled HGR at high risk (L3)</span></div>
+    </div>
+    <div class="frame">
+      <img src="assets/safety_gap.png" alt="HGR by severity rung across the six evaluated T2I models; the steepest transition is L1 to L2." loading="lazy"/>
+    </div>
+    <p class="side-note" style="max-width:var(--maxw);margin:14px auto 0">Prompts benign to text filters produce visually harmful outputs that evade classifiers trained on explicit L3 content. This boundary blind spot is universal across every evaluated model.</p>
+  </div>
+</section>
+
+<!-- PIPELINE -->
+<section class="band" id="pipeline">
+  <div class="wrap">
+    <div class="prose">
+      <p class="kicker">The ASL pipeline</p>
+      <h2>Automatic construction, human oversight.</h2>
+      <p class="lede">The Adversarial Severity Ladders pipeline builds monotonically escalating triplets without manual prompt authoring — the taxonomy, severity definitions, and escalation rules are authored and reviewed by the humans; the pipeline instantiates them.</p>
+    </div>
+    <div class="stages">
+      <div class="stage"><span class="num">01</span><h3>Safe prompt generation</h3><p>Seed benign prompts per category from the taxonomy anchors.</p></div>
+      <div class="stage"><span class="num">02</span><h3>Risky prompt synthesis</h3><p>Escalate prompts through the human-authored rules, rung by rung.</p></div>
+      <div class="stage"><span class="num">03</span><h3>Reference image generation</h3><p>Render each rung under matched conditions — same model, same seed.</p></div>
+      <div class="stage"><span class="num">04</span><h3>Verification</h3><p>MLLM verification with per-image risk explanations; incomplete ladders are excluded.</p></div>
+    </div>
+    <p class="side-note" style="max-width:var(--maxw);margin:16px auto 0">The full pipeline requires approximately 32 A100 GPU-hours. Human validation: a blinded study on 500 stratified pairs agrees with pipeline labels at &kappa; = 0.73.</p>
+  </div>
+</section>
+
+<!-- INSIGHTS -->
+<section class="band band--tint" id="insights">
+  <div class="wrap">
+    <div class="prose">
+      <p class="kicker">Findings</p>
+      <h2>Seven insights from an end-to-end evaluation.</h2>
+      <p class="lede">Six T2I models, nine defenses across three paradigms, six safety filters, six attack families — one arc: the gap is universal, everything calibrated on binary labels misses it, ladder data can close it, and attacks exploit what remains.</p>
+    </div>
+    <div class="insight-grid">
+      <article class="insight">
+        <p class="no">INSIGHT 1</p>
+        <p class="stat">A <em>universal</em> boundary blind spot</p>
+        <p>L1&rarr;L2 is the peak harm transition for five of six models; Boundary Delta spans 25.7–30.3 pp. Invisible to binary safe/unsafe evaluation.</p>
+      </article>
+      <article class="insight">
+        <p class="no">INSIGHT 2</p>
+        <p class="stat">Even the safe rung leaks</p>
+        <p>All six models produce non-zero harm at L0 (0.5–3.5%), ordered by generative capability — safety posture is baked into the weights, not supplied by guardrails.</p>
+      </article>
+      <article class="insight">
+        <p class="no">INSIGHT 3</p>
+        <p class="stat">Defenses <em>steepen</em> the gradient</p>
+        <p>All nine defenses suppress relatively more harm at L1 than L3 — MACE's L3:L1 ratio rises from 2.8&times; to 5.8&times;. Residual harm concentrates at the top; the absolute gap persists.</p>
+      </article>
+      <article class="insight">
+        <p class="no">INSIGHT 4</p>
+        <p class="stat">The tradeoff is dominated by two methods</p>
+        <p>TRCE Pareto-dominates six of seven remaining defenses; MACE erases more harm but pays 11&times; the utility cost and 2.7&times; the over-refusal rate.</p>
+      </article>
+      <article class="insight">
+        <p class="no">INSIGHT 5</p>
+        <p class="stat">Filters are <em>blind to severity</em></p>
+        <p>Most filters show nearly flat detection from L0 to L3. CLIP-NSFW misses 75% of L3 content; Qwen2.5-VL's bypass rate is 88%.</p>
+      </article>
+      <article class="insight">
+        <p class="no">INSIGHT 6</p>
+        <p class="stat">The gap is <em>trainable-away</em></p>
+        <p>A LoRA-tuned filter on ladder data cuts bypass from 52.2% to 2.2% against the protocol-matched zero-shot backbone — and transfers to fresh generations from all six models (pooled FBR 2.4%).</p>
+      </article>
+      <article class="insight" style="grid-column:1/-1">
+        <p class="no">INSIGHT 7</p>
+        <p class="stat">The gap is an <em>active attack surface</em></p>
+        <p>Six attack families all exceed 55% success against the strongest utility-preserving defense configuration — the newest model-free attack (PGJ) leads at 72.4%. The safety gap is not a passive evaluation artifact but a structurally exploitable channel.</p>
+      </article>
+    </div>
+    <div class="metrics" style="margin-top:26px">
+      <div><b>6</b><span>T2I models</span></div>
+      <div><b>9</b><span>defense methods</span></div>
+      <div><b>6</b><span>safety filters</span></div>
+      <div><b>6</b><span>attack families</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CITE -->
+<section class="band" id="cite">
+  <div class="wrap">
+    <div class="prose">
+      <p class="kicker">Citation</p>
+      <h2>Cite this work.</h2>
+      <p>If SafeGrad informs your research, please cite the WACV 2027 paper:</p>
+      <div class="cite-box">
+        <pre id="bibtex">@inproceedings{vo2026safegrad,
+  title     = {SafeGrad: A Severity-Graded Benchmark for Safety Evaluation,
+               Defense, and Attack of Text-to-Image Models},
+  author    = {Vo, Duc Minh and Li, Jiaxuan and Nguyen, Huy H.
+               and Kavumba, Pride and Wataoka, Koki},
+  booktitle = {Proceedings of the IEEE/CVF Winter Conference on
+               Applications of Computer Vision (WACV)},
+  year      = {2027}
+}</pre>
+        <button class="copy-btn" id="copyBtn" type="button">Copy</button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>SafeGrad — WACV 2027 Datasets Track &middot; SB Intuitions Corp.</p>
+    <p><a href="https://github.com/vominhduc/SafeGrad_paper" target="_blank" rel="noreferrer">GitHub</a> &middot; <a href="https://vmdlab.github.io/" target="_blank" rel="noreferrer">VMD Lab</a></p>
+  </div>
+</footer>
+
+<script>
+// Copy bibtex
+document.getElementById('copyBtn').addEventListener('click', async function(){
+  try{
+    await navigator.clipboard.writeText(document.getElementById('bibtex').textContent);
+    this.textContent='Copied!';this.classList.add('done');
+    setTimeout(()=>{this.textContent='Copy';this.classList.remove('done')},1600);
+  }catch(e){ this.textContent='Select manually'; }
+});
+// Scroll index active state
+const links=[...document.querySelectorAll('.scroll-index a')];
+const map=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+function tick(){
+  let active=0;
+  map.forEach((el,i)=>{ if(el.getBoundingClientRect().top<window.innerHeight*0.4) active=i; });
+  links.forEach((a,i)=>a.classList.toggle('active',i===active));
+}
+document.addEventListener('scroll',tick,{passive:true});tick();
+</script>
+</body>
+</html>
