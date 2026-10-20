@@ -111,6 +111,16 @@ code,pre{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace}
 .stage h3{font-size:16.5px;margin:0 0 8px}
 .stage p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.5}
 
+/* samples */
+.samples{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:30px 0 0}
+.sample{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff}
+.sample img{width:100%}
+.sample .cap{padding:13px 16px;border-top:1px solid var(--line)}
+.sample .cat{font-weight:800;font-size:14.5px;margin:0 0 4px}
+.sample .cap p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+.samples-note{border:1.5px dashed var(--line);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;text-align:center;padding:28px;background:transparent}
+.samples-note p{margin:0;font-size:14.5px;color:var(--ink-soft);max-width:34ch;line-height:1.6}
+
 /* insights */
 .insight-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:30px 0 10px}
 .insight{border:1px solid var(--line);border-radius:var(--radius);padding:20px 20px 18px;background:#fff;display:flex;flex-direction:column;gap:6px}
@@ -184,6 +194,7 @@ code,pre{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace}
       <a href="#ladder">The ladder</a>
       <a href="#gap">Safety gap</a>
       <a href="#pipeline">Pipeline</a>
+      <a href="#samples">Samples</a>
       <a href="#insights">Insights</a>
       <a href="#cite">Cite</a>
     </nav>
@@ -196,6 +207,7 @@ code,pre{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace}
   <a href="#ladder"><span class="bar"></span><span>Severity ladder</span></a>
   <a href="#gap"><span class="bar"></span><span>The safety gap</span></a>
   <a href="#pipeline"><span class="bar"></span><span>ASL pipeline</span></a>
+  <a href="#samples"><span class="bar"></span><span>Samples</span></a>
   <a href="#insights"><span class="bar"></span><span>Insights</span></a>
   <a href="#cite"><span class="bar"></span><span>Cite</span></a>
 </nav>
@@ -336,8 +348,45 @@ code,pre{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace}
   </div>
 </section>
 
+<!-- SAMPLES -->
+<section class="band band--tint" id="samples">
+  <div class="wrap">
+    <div class="prose">
+      <p class="kicker">Dataset samples</p>
+      <h2>One scenario, four rungs, end to end.</h2>
+      <p class="lede">In every ladder, the prompt, the reference image, and the risk explanation co-escalate from L0 to L3 under matched generation conditions — same model, same seed. Three of the eleven categories, as shown in the supplementary material:</p>
+    </div>
+    <div class="samples">
+      <figure class="sample">
+        <img src="assets/illustration_violence.jpg" alt="Violence ladder example: prompts, reference images, and risk explanations escalate from L0 to L3." loading="lazy"/>
+        <figcaption class="cap">
+          <p class="cat">Violence</p>
+          <p>L1 stays stylized fictional conflict while L2 escalates to realistic injury — exactly the boundary band that binary benchmarks average away.</p>
+        </figcaption>
+      </figure>
+      <figure class="sample">
+        <img src="assets/illustration_intellectual_property_violation.jpg" alt="Copyright Infringement ladder example: prompts, reference images, and risk explanations escalate from L0 to L3." loading="lazy"/>
+        <figcaption class="cap">
+          <p class="cat">Copyright Infringement</p>
+          <p>The escalation rules instantiated: each rung sharpens policy-relevant infringement while the prompt remains textually benign to filters.</p>
+        </figcaption>
+      </figure>
+      <figure class="sample">
+        <img src="assets/illustration_misleading_information.jpg" alt="Misinformation ladder example: prompts, reference images, and risk explanations escalate from L0 to L3." loading="lazy"/>
+        <figcaption class="cap">
+          <p class="cat">Misinformation</p>
+          <p>A Social-family ladder: severity climbs from harmless speculation toward fabricated evidence without ever tripping an explicit-content classifier.</p>
+        </figcaption>
+      </figure>
+      <div class="samples-note">
+        <p>The full collection — all <b>11 risk categories</b> with per-rung risk explanations — appears in the supplementary material of the paper.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- INSIGHTS -->
-<section class="band band--tint" id="insights">
+<section class="band" id="insights">
   <div class="wrap">
     <div class="prose">
       <p class="kicker">Findings</p>
@@ -391,7 +440,7 @@ code,pre{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace}
 </section>
 
 <!-- CITE -->
-<section class="band" id="cite">
+<section class="band band--tint" id="cite">
   <div class="wrap">
     <div class="prose">
       <p class="kicker">Citation</p>
